@@ -1,0 +1,32 @@
+{
+  "name": "kanban-desktop",
+  "version": "1.0.0",
+  "productName": "Kanban Board",
+  "description": "Десктоп-версия: канбан-доска + ИИ-ассистент + голос.",
+  "main": "main.js",
+  "author": "Kanban Board contributors",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --linux dir",
+    "dist": "electron-builder --linux AppImage",
+    "dist:linux": "electron-builder --linux AppImage"
+  },
+  "build": {
+    "appId": "ru.kanban.desktop",
+    "productName": "Kanban Board",
+    "asar": false,
+    "files": ["main.js", "app/**", "build/**", "package.json"],
+    "directories": { "output": "dist" },
+    "linux": {
+      "target": ["AppImage"],
+      "category": "Office",
+      "icon": "build/icon.png",
+      "maintainer": "Kanban Board contributors"
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  }
+}
